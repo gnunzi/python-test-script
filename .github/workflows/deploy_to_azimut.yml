@@ -18,7 +18,7 @@ jobs:
         id: current-time
         
       - name: Authentication to azimut
-        uses: fjogeleit/http-request-action@master
+        uses: GiorgioNunzi/http-request-action@master
         id: az-authentication
         with:
           url: 'https://cloud.azeti.net/acp-service/authentication/auth'
@@ -28,7 +28,7 @@ jobs:
           #data: username=${{ secrets.AZ_USERNAME }}&password=${{ secrets.AZ_PASSWORD }}
           
       - name: Send operation
-        uses: fjogeleit/http-request-action@master
+        uses: GiorgioNunzi/http-request-action@master
         with:
           url: 'https://cloud.azeti.net/acp-service/import/giorgio_sc/hd'
           method: post
