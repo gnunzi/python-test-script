@@ -46,7 +46,7 @@ jobs:
         env:
           TOKEN: ${{ fromJson(steps.az-authentication.outputs.response)['token'] }}
         with:
-          url: 'https://cloud.azeti.net/acp-service/import/873d3b17-41e6-45d1-b17f-bfb6bf8975c4/hd'
+          url: 'https://cloud.azeti.net/acp-service/actions'
           method: post
           customHeaders: '{"X-Authorization": "${{ env.TOKEN }}" }'
           data: '{ "action": "ScriptsOrchestrator", "command": "PullOperation", "serial":"giorgio_sc" }'
