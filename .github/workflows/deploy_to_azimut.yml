@@ -16,7 +16,7 @@ jobs:
       - name: Get current time
         uses: 1466587594/get-current-time@v2
         id: current-time
-        
+
       - name: Authentication to azimut
         uses: GiorgioNunzi/http-request-action@master
         id: az-authentication
@@ -27,11 +27,11 @@ jobs:
           data: '{ "username": "${{ secrets.AZ_USERNAME }}", "password": "${{ secrets.AZ_PASSWORD }}" }'
           #contentType: application/x-www-form-urlencoded
           #data: username=${{ secrets.AZ_USERNAME }}&password=${{ secrets.AZ_PASSWORD }}
-          
-      - name: Show response
-        run: echo ${{ fromJson(steps.az-authentication.outputs.response)['token'] }}
 
-      - name: Send operation
+      #- name: Show response
+      #  run: echo ${{ fromJson(steps.az-authentication.outputs.response)['token'] }}
+
+      - name: Send operation to update script
         uses: GiorgioNunzi/http-request-action@master
         env:
           TOKEN: ${{ fromJson(steps.az-authentication.outputs.response)['token'] }}
@@ -40,3 +40,13 @@ jobs:
           method: put
           customHeaders: '{"X-Authorization": "${{ env.TOKEN }}" }'
           data: '[{ "sensor_id": "~ Orchestrator: Operation", "value": "pull script python-test-script.git", "valueType":"string","type":"string","timestamp": "${{ steps.current-time.outputs.time }}" }]'
+
+      - name: Trigger action to pull operation
+        uses: GiorgioNunzi/http-request-action@master
+        env:
+          TOKEN: ${{ fromJson(steps.az-authentication.outputs.response)['token'] }}
+        with:
+          url: 'https://cloud.azeti.net/acp-service/import/873d3b17-41e6-45d1-b17f-bfb6bf8975c4/hd'
+          method: post
+          customHeaders: '{"X-Authorization": "${{ env.TOKEN }}" }'
+          data: '{ "action": "ScriptsOrchestrator", "command": "PullOperation", "serial":"giorgio_sc" }'
