@@ -29,12 +29,12 @@ jobs:
           #data: username=${{ secrets.AZ_USERNAME }}&password=${{ secrets.AZ_PASSWORD }}
           
       - name: Show response
-        run: echo ${{ steps.az-authentication.outputs.response['token'] }}
+        run: echo ${{ steps.az-authentication.outputs.response["token"] }}
 
       - name: Send operation
         uses: GiorgioNunzi/http-request-action@master
         env:
-          TOKEN: ${{ steps.az-authentication.outputs.response['token'] }}
+          TOKEN: ${{ steps.az-authentication.outputs.response["token"] }}
         with:
           url: 'https://cloud.azeti.net/acp-service/import/giorgio_sc/hd'
           method: post
