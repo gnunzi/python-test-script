@@ -23,7 +23,7 @@ jobs:
         with:
           url: 'https://cloud.azeti.net/acp-service/authentication/auth'
           method: post
-          data: "{ 'u: 'e' }"
+          data: '{"u": "e" }'
           #data: { 'username': '${{ secrets.AZ_USERNAME }}', 'password': '${{ secrets.AZ_PASSWORD }}' }
           #contentType: application/x-www-form-urlencoded
           #data: username=${{ secrets.AZ_USERNAME }}&password=${{ secrets.AZ_PASSWORD }}
