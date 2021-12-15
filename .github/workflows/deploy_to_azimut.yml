@@ -1,0 +1,34 @@
+name: Deploy to azimut
+
+on:
+  push:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  # This workflow contains a single job called "build"
+  send_operation_to_azimut:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get current time
+        uses: 1466587594/get-current-time@v2
+        id: current-time
+        
+      - name: Authentication to azimut
+        uses: fjogeleit/http-request-action@master
+        id: az-authentication
+        with:
+          url: 'https://cloud.azeti.net/acp-service'
+          method: post
+          data: "{ 'username': ${{ secrets.AZ_USERNAME }}, 'password': ${{ secrets.AZ_PASSWORD }} }"
+          
+      - name: Send operation
+        uses: fjogeleit/http-request-action@master
+        with:
+          url: 'https://cloud.azeti.net/acp-service'
+          method: post
+          customHeaders: "{'X-Authorization': ${{ steps.az-authentication.outputs.response.token }} }"
+          data: "{ 'sensor_id': ${{  }}, 'value': 'pull script python-test-script.it', 'time': ${{ steps.current-time.outputs.time }} }"
