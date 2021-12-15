@@ -37,6 +37,6 @@ jobs:
           TOKEN: ${{ fromJson(steps.az-authentication.outputs.response)['token'] }}
         with:
           url: 'https://cloud.azeti.net/acp-service/import/giorgio_sc/hd'
-          method: post
+          method: put
           customHeaders: '{"X-Authorization": "${{ env.TOKEN }}" }'
           data: '{ "sensor_id": "~ Orchestrator: Operation", "value": "pull script python-test-script.it", "time": "${{ steps.current-time.outputs.time }}" }'
