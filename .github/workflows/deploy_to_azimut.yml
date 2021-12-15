@@ -29,7 +29,7 @@ jobs:
           #data: username=${{ secrets.AZ_USERNAME }}&password=${{ secrets.AZ_PASSWORD }}
           
       - name: Show response
-        run: echo ${{ fromJson(steps.az-authentication.outputs.response["token"]) }}
+        run: echo ${{ fromJson(steps.az-authentication.outputs.response) }}
 
       - name: Send operation
         uses: GiorgioNunzi/http-request-action@master
