@@ -1,0 +1,2 @@
+My script writes: 1
+My script writes: 2
