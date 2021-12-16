@@ -1,2 +1,2 @@
 auth-key: abc123
-main-script: my-counter.py
+main-script: hallo-world.py
