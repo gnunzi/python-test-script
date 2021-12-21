@@ -1,2 +1,0 @@
-auth-key: abc123
-main-script: alex-ml-script.py
