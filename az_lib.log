@@ -68,3 +68,9 @@
 2022-01-28 12:03:38,306 | az_logger.py   :69   - __init__   > You can change the log filename with env variable <AZ_LOGGER_NAME>.
 2022-01-28 12:03:38,315 | hello-world.py :15   - <module>   > Printing data with cycle: 1
 2022-01-28 12:03:38,315 | az_lib.py      :43   - publish    > >> PUBLISH My test value: 1
+2022-01-28 12:20:42,911 | az_logger.py   :66   - __init__   > === az logger started. Log file: C:\git-repos2\python-test-script\az_lib.log ===
+2022-01-28 12:20:42,911 | az_logger.py   :69   - __init__   > You can change the log filename with env variable <AZ_LOGGER_NAME>.
+2022-01-28 12:20:42,918 | hello-world.py :15   - <module>   > Printing data with cycle: 1
+2022-01-28 12:20:42,919 | az_lib.py      :43   - publish    > >> PUBLISH My test value: 1
+2022-01-28 12:20:47,930 | hello-world.py :15   - <module>   > Printing data with cycle: 2
+2022-01-28 12:20:47,930 | az_lib.py      :43   - publish    > >> PUBLISH My test value: 2
