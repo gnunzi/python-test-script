@@ -5,7 +5,8 @@ import sys
 import traceback
 
 ENV_LOGGER_FILENAME='AZ_LOGGER_NAME'
-LOGGER_FILENAME=os.getenv(ENV_LOGGER_FILENAME,os.path.join(os.getcwd(),'az_lib.log'))
+#LOGGER_FILENAME=os.getenv(ENV_LOGGER_FILENAME,os.path.join(os.getcwd(),'az_lib.log'))
+LOGGER_FILENAME=os.path.join(os.getcwd(),'az_lib.log')
 
 class ConsoleFormatter(logging.Formatter):
     """The formatter used for the console output. It introduces colors based on the log level
