@@ -11,8 +11,12 @@ if AZEE_VERSION:
     if AZ_LIB_VERSION<AZEE_VERSION:
         logger.error(f"Incompatible versions. azLib: {AZ_LIB_VERSION}. Azimuth Edge: {AZEE_VERSION}")
         sys.exit(-1)
+    else:
+        logger.info(f"Running under azimuth Execution Environment (azEE) v. {AZEE_VERSION}")
     import az_lib_ee
     azLibEE=az_lib_ee.AzLibEE()
+else:
+    logger.info("No azimuth Execution Environment (azEE) found")
 
 import json
 
