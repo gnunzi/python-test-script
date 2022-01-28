@@ -1,5 +1,11 @@
 {
     "cSpell.words": [
-        "fjogeleit"
+        "cachetools",
+        "dateutil",
+        "dockerenv",
+        "fjogeleit",
+        "levelno",
+        "mqtt",
+        "paho"
     ]
 }
