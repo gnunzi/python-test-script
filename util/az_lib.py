@@ -7,10 +7,14 @@ AZ_LIB_VERSION=0.1
 AZEE_VERSION=os.getenv("AZIMUTH_EXECUTION_ENVIRONMENT_VERSION")
 
 if AZEE_VERSION:
-    AZEE_VERSION=int(AZEE_VERSION)
-    if AZ_LIB_VERSION<AZEE_VERSION:
-        logger.error(f"Incompatible versions. azLib: {AZ_LIB_VERSION}. Azimuth Edge: {AZEE_VERSION}")
-#        sys.exit(-1)
+    try:
+        AZEE_VERSION=float(AZEE_VERSION)
+        if AZ_LIB_VERSION<AZEE_VERSION:
+            logger.error(f"Incompatible versions. azLib: {AZ_LIB_VERSION}. Azimuth Edge: {AZEE_VERSION}")
+            sys.exit(-1)
+    except:
+        logger.error("Error in checking azEE version: "+AZEE_VERSION)
+
     else:
         MY_SCRIPT_NAME=os.getcwd()
         logger.info(f"Running under azimuth Execution Environment (azEE) v. {AZEE_VERSION}. My script name is {MY_SCRIPT_NAME}")
