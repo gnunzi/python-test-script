@@ -15,10 +15,13 @@ if AZEE_VERSION:
         else:
             MY_SCRIPT_NAME=os.getcwd()
             logger.info(f"Running under azimuth Execution Environment (azEE) v. {AZEE_VERSION}. My script name is {MY_SCRIPT_NAME}")
-            import az_lib_ee
-            azLibEE=az_lib_ee.AzLibEE()
-    except:
-        logger.error("Error in checking azEE version: "+str(AZEE_VERSION))
+            try:
+                import az_lib_ee
+                azLibEE=az_lib_ee.AzLibEE()
+            except Exception as exception:
+                logger.error("Error in loading azLibEE: "+str(exception))
+    except Exception as exception:
+        logger.error("Error in checking azEE version: "+str(AZEE_VERSION)+" ."+str(exception))
 else:
     logger.info("No azimuth Execution Environment (azEE) found")
 
@@ -45,7 +48,7 @@ def publish_sensor_value_raw(sensor_id, sensor_value):
     pass
 
 def publish(sensor_id, sensor_value):
-    if AZEE_VERSION:
+    if azLibEE:
         azLibEE.publish_sensor_value(sensor_id,sensor_value,MY_SCRIPT_NAME)
     else:
         logger.info(f">> PUBLISH {sensor_id}: {sensor_value}")
