@@ -12,7 +12,8 @@ if AZEE_VERSION:
         logger.error(f"Incompatible versions. azLib: {AZ_LIB_VERSION}. Azimuth Edge: {AZEE_VERSION}")
         sys.exit(-1)
     else:
-        logger.info(f"Running under azimuth Execution Environment (azEE) v. {AZEE_VERSION}")
+        MY_SCRIPT_NAME=os.getcwd()
+        logger.info(f"Running under azimuth Execution Environment (azEE) v. {AZEE_VERSION}. My script name is {MY_SCRIPT_NAME}")
     import az_lib_ee
     azLibEE=az_lib_ee.AzLibEE()
 else:
@@ -42,7 +43,7 @@ def publish_sensor_value_raw(sensor_id, sensor_value):
 
 def publish(sensor_id, sensor_value):
     if AZEE_VERSION:
-        azLibEE.publish_sensor_value(sensor_id,sensor_value)
+        azLibEE.publish_sensor_value(sensor_id,sensor_value,MY_SCRIPT_NAME)
     else:
         logger.info(f">> PUBLISH {sensor_id}: {sensor_value}")
         #add print to csv file
