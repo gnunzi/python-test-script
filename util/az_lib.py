@@ -1,6 +1,6 @@
 import os
 import sys
-from util_in_dev.az_logger import AzetiLogger
+from util.az_logger import AzetiLogger
 logger = AzetiLogger()
 
 # try:
@@ -36,9 +36,6 @@ def get_sensor_values(site_guid: str, sensor_name: str, from_time: datetime, fro
 def publish_sensor_value_raw(sensor_id, sensor_value):
     pass
 
-def publish(sensor_id, sensor_value):
-    if azLibEE:
-        azLibEE.publish_sensor_value(sensor_id,sensor_value,MY_SCRIPT_NAME)
-    else:
-        logger.info(f">> PUBLISH {sensor_id}: {sensor_value}")
-        #add print to csv file
+def publish_sensor_value(sensor_id, sensor_value):
+    logger.info(f">> PUBLISH {sensor_id}: {sensor_value}")
+    #add print to csv file
