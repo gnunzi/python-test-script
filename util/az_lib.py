@@ -12,9 +12,9 @@ try:
         logger.info(f"Running under azimuth Execution Environment (azEE) v. {AZEE_VERSION}. My script name is {MY_SCRIPT_NAME}")
     except Exception as exception:
         logger.error("Generic error: "+str(exception))
-        os.exit(-1)
+        sys.exit(-1)
 except Exception as exception:
-    logger.info("No azimuth Execution Environment (azEE) found "+str(exception))
+    logger.info("No azimuth Execution Environment (azEE) found. Original error: "+str(exception))
 
 from datetime import datetime
 
