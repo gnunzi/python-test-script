@@ -1,20 +1,20 @@
 import os
 import sys
-from util.az_logger import AzetiLogger
+from util_in_dev.az_logger import AzetiLogger
 logger = AzetiLogger()
 
-try:
-    import util.az_lib_ee as az_lib_ee
-    try:
-        azLibEE=az_lib_ee.AzLibEE()
-        MY_SCRIPT_NAME=os.getcwd()
-        #todo: check versions
-        logger.info(f"Running under azimuth Execution Environment (azEE) v. {AZEE_VERSION}. My script name is {MY_SCRIPT_NAME}")
-    except Exception as exception:
-        logger.error("Generic error: "+str(exception))
-        sys.exit(-1)
-except Exception as exception:
-    logger.info("No azimuth Execution Environment (azEE) found. Original error: "+str(exception))
+# try:
+#     import util.az_lib_ee as az_lib_ee
+#     try:
+#         azLibEE=az_lib_ee.AzLibEE()
+#         MY_SCRIPT_NAME=os.getcwd()
+#         #todo: check versions
+#         logger.info(f"Running under azimuth Execution Environment (azEE) v. {AZEE_VERSION}. My script name is {MY_SCRIPT_NAME}")
+#     except Exception as exception:
+#         logger.error("Generic error: "+str(exception))
+#         sys.exit(-1)
+# except Exception as exception:
+#     logger.info("No azimuth Execution Environment (azEE) found. Original error: "+str(exception))
 
 from datetime import datetime
 

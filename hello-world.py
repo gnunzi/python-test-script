@@ -17,7 +17,7 @@ try:
         logger.info("Printing data with cycle "+str(counter)+" to file "+filename)
         print(teststr+str(counter),file=my_test_file)
         my_test_file.flush()
-        az_lib.publish("My test value",counter)
+        az_lib.publish_sensor_value("My test value",counter)
         counter+=1
         time.sleep(5)
 except Exception as exception:
