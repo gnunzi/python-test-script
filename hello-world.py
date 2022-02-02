@@ -11,7 +11,7 @@ def my_create_data():
         logger.info("Printing data with cycle "+str(counter)+" to file "+filename)
         print(teststr+str(counter),file=my_test_file)
         my_test_file.flush()
-        azLib.publish_sensor_value("My test value",counter)
+        azLib.publish_sensor_value("My test value",str(counter))
         counter+=1
         time.sleep(5)
 
