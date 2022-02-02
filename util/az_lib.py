@@ -21,21 +21,22 @@ from datetime import datetime
 # The maximum length of the string values in InfluxDB 256 is a first guess. TODO: Check max value
 MAX_LENGTH_VALUE_STRING = 256
 
-# returns [str,float,str]
-def get_sensor_value_last(site_guid: str, sensor_name: str):
-    """Returns the last value of a sensor.
+class AzLib():
+    # returns [str,float,str]
+    def get_sensor_value_last(site_guid: str, sensor_name: str):
+        """Returns the last value of a sensor.
 
-    The returned value can be None if no value is found.
-    """
-    logger.debug(f"Retrieving last value of <{sensor_name}>.")
+        The returned value can be None if no value is found.
+        """
+        logger.debug(f"Retrieving last value of <{sensor_name}>.")
 
-def get_sensor_values(site_guid: str, sensor_name: str, from_time: datetime, from_included: bool = False):
-    logger.debug(
-        f"Retrieving values of <{sensor_name}> from time <{from_time}>.")
+    def get_sensor_values(site_guid: str, sensor_name: str, from_time: datetime, from_included: bool = False):
+        logger.debug(
+            f"Retrieving values of <{sensor_name}> from time <{from_time}>.")
 
-def publish_sensor_value_raw(sensor_id, sensor_value):
-    pass
+    def publish_sensor_value_raw(sensor_id, sensor_value):
+        pass
 
-def publish_sensor_value(sensor_id, sensor_value):
-    logger.info(f">> PUBLISH {sensor_id}: {sensor_value}")
-    #add print to csv file
+    def publish_sensor_value(self,sensor_id, sensor_value):
+        logger.info(f">> PUBLISH {sensor_id}: {sensor_value}")
+        #add print to csv file
