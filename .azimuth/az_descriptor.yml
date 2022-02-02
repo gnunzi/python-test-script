@@ -1,0 +1,16 @@
+name: my-first-test-script
+
+execution:
+  main-script: hello-world.bat
+  execution-policy: start-only
+  auth-key: abc123
+
+sensors:
+  - name: My test sensor1
+    upload: false
+  - name: My test sensor2
+    upload: false
+  - names: [My test sensor3, My test sensor4]
+    upload: false
+  - names: [My second group sensor 1, My second group sensor 2]
+    upload: false
