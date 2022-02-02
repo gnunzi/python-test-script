@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
 echo ciao > t.txt
-python hello-world.py 2>> t.txt
+echo set>>t.txt
+python hello-world.py &>> t.txt
 echo executed >> t.txt
