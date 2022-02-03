@@ -7,9 +7,11 @@ azLib=az_lib.AzLib() # The azimuth Execution Environment will inject the azLibEE
 
 def my_create_data():
     counter = 1
+    filename="testfile.txt"
+    my_test_file=open(filename,"w")
     while True:
         logger.info("Printing data with cycle "+str(counter)+" to file "+filename)
-        print(teststr+str(counter),file=my_test_file)
+        print("My test value: "+str(counter),file=my_test_file)
         my_test_file.flush()
         azLib.publish_sensor_value("My test value",str(counter))
         counter+=1
@@ -18,10 +20,6 @@ def my_create_data():
 try:
     print("This is a test script. We will create a counter and increment it every 5 seconds.")
     print("You will see this message to the console only in your dev environment")
-    teststr="test string"
-    filename="testfile.txt"
-    my_test_file=open(filename,"w")
-    print(teststr,file=my_test_file)
     my_create_data()
 except Exception as exception:
     traceback.print_exc()
