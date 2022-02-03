@@ -11,6 +11,7 @@ def say_hello():
     filename="testfile.txt"
     my_test_file=open(filename,"w")
     print(teststr,file=my_test_file)
+    publish_sensor_value("test sensor",6)
     my_test_file.flush()
 
 try:

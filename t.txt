@@ -1,6 +1,4 @@
 hello
-Thu, Feb  3, 2022 10:06:34 AM
-=== az logger started. Log file: C:\git-repos2\python-test-script\az_lib.log ===
-[90maz_logger                               init            |You can change the log filename with env variable <AZ_LOGGER_NAME>.[0m
-This is a test script.
+Thu, Feb  3, 2022 11:12:00 AM
+./create-data.sh: line 5: python3: command not found
 executed
