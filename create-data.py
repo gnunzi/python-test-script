@@ -15,6 +15,8 @@ def my_create_data():
         my_test_file.flush()
         azLib.publish_sensor_value("My test value",str(counter))
         counter+=1
+        if counter==40:
+            return
         time.sleep(5)
 
 try:
