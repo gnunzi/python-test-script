@@ -1,2 +1,2 @@
 auth-key: abc123
-main-script: hello-world.sh
+main-script: create-date.sh
