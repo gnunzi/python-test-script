@@ -11,9 +11,11 @@ def say_hello():
     filename="testfile.txt"
     my_test_file=open(filename,"w")
     print(teststr,file=my_test_file)
+    my_test_file.flush()
 
 try:
     print("This is a test script.")
+    say_hello()
 except Exception as exception:
     traceback.print_exc()
     logger.logTraceStackToLogFile()
