@@ -1,6 +1,6 @@
 import time
 import traceback
-import util.az_lib as az_lib
+import az_lib.az_lib as az_lib
 from util.az_logger import AzetiLogger
 logger = AzetiLogger() # In next version, this could be any logger
 azLib=az_lib.AzLib() # The azimuth Execution Environment will inject the azLibEE here

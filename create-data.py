@@ -1,8 +1,8 @@
 import time
 import traceback
-import util.az_lib as az_lib
-from util.az_logger import AzetiLogger
-logger = AzetiLogger() # In next version, this could be any logger
+import az_lib.az_lib as az_lib
+#from util.az_logger import AzetiLogger
+#logger = AzetiLogger() # In next version, this could be any logger
 azLib=az_lib.AzLib() # The azimuth Execution Environment will inject the azLibEE here
 
 def my_create_data():
@@ -10,7 +10,8 @@ def my_create_data():
     filename="testfile.txt"
     my_test_file=open(filename,"w")
     while True:
-        logger.info("Printing data with cycle "+str(counter)+" to file "+filename)
+ #       logger.info("Printing data with cycle "+str(counter)+" to file "+filename)
+        print("Printing data with cycle "+str(counter)+" to file "+filename)
         print("My test value: "+str(counter),file=my_test_file)
         my_test_file.flush()
         azLib.publish_sensor_value("My test value",str(counter))
@@ -25,5 +26,5 @@ try:
     my_create_data()
 except Exception as exception:
     traceback.print_exc()
-    logger.logTraceStackToLogFile()
+    #logger.logTraceStackToLogFile()
 
