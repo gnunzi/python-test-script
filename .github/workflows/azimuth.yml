@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: GiorgioNunzi/AzimuthGitHubAction
+        uses: GiorgioNunzi/AzimuthGitHubAction@v0.1
         with:
           who-to-greet: "test"
       # Use the output from the `hello` step
