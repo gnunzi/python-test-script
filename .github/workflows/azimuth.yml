@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: ./az_lib
+        uses: GiorgioNunzi/AzimuthGitHubAction@main
         with:
           who-to-greet: "test"
       # Use the output from the `hello` step
