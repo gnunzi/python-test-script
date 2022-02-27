@@ -2,13 +2,14 @@ name: New azimuth action
 on: [push]
 
 jobs:
-  hello_world_job:
+  azimuth:
     runs-on: ubuntu-latest
-    name: The action to deploy to azimuth
+    name: Deploy to azimuth
     steps:
-      - name: Deploy to azimuth
-        id: azimuth
+      - name: Deploy to azimuth - step
+        id: deploy_to_azimuth_step
         uses: GiorgioNunzi/AzimuthGitHubAction@main
         with:
           endpoint: "https://digifact.aurubis.com"
-          username: "staging@"
+          username: "${{ secrets.AZ_USERNAME }}"
+          password: "${{ secrets.AZ_PASSWORD }}
