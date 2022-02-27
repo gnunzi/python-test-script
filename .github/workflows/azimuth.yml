@@ -10,6 +10,6 @@ jobs:
         id: deploy_to_azimuth_step
         uses: GiorgioNunzi/AzimuthGitHubAction@main
         with:
-          endpoint: "https://digifact.aurubis.com"
+          endpoint: "https://digifact.aurubis.com/acp-service"
           username: "${{ secrets.AZ_USERNAME }}"
           password: "${{ secrets.AZ_PASSWORD }}"
