@@ -4,14 +4,11 @@ on: [push]
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
-    name: The azimuth action
+    name: The action to deploy to azimuth
     steps:
       - name: Deploy to azimuth
-        id: hello
+        id: azimuth
         uses: GiorgioNunzi/AzimuthGitHubAction@main
         with:
-          endpoint: "digifact.aurubis.com"
+          endpoint: "https://digifact.aurubis.com"
           username: "staging@"
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
