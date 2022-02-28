@@ -1,4 +1,4 @@
-name: New azimuth action
+name: Action to automatically deploy to azimuth
 on: [push]
 
 jobs:
@@ -6,10 +6,12 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy to azimuth
     steps:
-      - name: Deploy to azimuth - step
+      - name: Step to automatically deploy to azimuth
         id: deploy_to_azimuth_step
         uses: GiorgioNunzi/AzimuthGitHubAction@main
         with:
           endpoint: "https://digifact.aurubis.com/acp-service"
           username: "${{ secrets.AZ_USERNAME }}"
           password: "${{ secrets.AZ_PASSWORD }}"
+          script_name: "python-test-script.git"
+          site_guid: "77090086-2098-455d-af08-a0f06154c217"
