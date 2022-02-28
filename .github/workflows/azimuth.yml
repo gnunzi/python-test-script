@@ -15,3 +15,4 @@ jobs:
           password: "${{ secrets.AZ_PASSWORD }}"
           script_name: "python-test-script.git"
           site_guid: "77090086-2098-455d-af08-a0f06154c217"
+          site_serial: "azimuth-demo"
