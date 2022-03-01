@@ -13,7 +13,7 @@ def my_create_data():
      #       logger.info("Printing data with cycle "+str(counter)+" to file "+filename)
         #print("Printing data with cycle "+str(counter)+" to file "+filename)
         azLib.logger.info("Publishing test value: " +
-                          str(counter), file=my_test_file)
+                          str(counter))
         my_test_file.flush()
         azLib.publish_sensor_value("My test value", str(counter))
         counter += 1
