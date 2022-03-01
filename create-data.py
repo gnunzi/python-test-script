@@ -8,6 +8,7 @@ def my_create_data():
     counter = 1
     filename = "testfile.txt"
     my_test_file = open(filename, "w")
+    azLib.logger.info('Starting main loop...')
     while True:
      #       logger.info("Printing data with cycle "+str(counter)+" to file "+filename)
         #print("Printing data with cycle "+str(counter)+" to file "+filename)
@@ -28,4 +29,5 @@ try:
     my_create_data()
 except Exception as exception:
     traceback.print_exc()
+    azLib.logger.error('Got error'+exception)
     # logger.logTraceStackToLogFile()
