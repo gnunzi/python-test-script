@@ -26,7 +26,7 @@ try:
     print("This is a test script. We will create a counter and increment it every 5 seconds.")
     print("You will see this message to the console only in your dev environment")
     azLib.logger.info('Starting script...')
-    # my_create_data()
+    my_create_data()
 except Exception as exception:
     traceback.print_exc()
     azLib.logger.error('Got error'+exception)
