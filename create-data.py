@@ -5,7 +5,7 @@ azLib = az_lib.AzLib('create-data')
 
 
 def my_create_data():
-    counter = 1
+    counter = 123
     filename = "testfile.txt"
     my_test_file = open(filename, "w")
     azLib.logger.info('Starting main loop...')
@@ -16,7 +16,7 @@ def my_create_data():
                           str(counter))
         my_test_file.flush()
         azLib.publish_sensor_value("My test value", str(counter))
-        counter += 1
+        counter -= 1
         if counter == 40:
             return
         time.sleep(5)
