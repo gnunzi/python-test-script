@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "AzimuthGitHubAction",
+			"path": "..\\AzimuthGitHubAction"
+		}
+	],
+	"settings": {}
+}

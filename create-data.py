@@ -16,8 +16,8 @@ def my_create_data():
                           str(counter))
         my_test_file.flush()
         azLib.publish_sensor_value("My test value", str(counter))
-        counter += 2
-        if counter == 20:
+        counter += 1
+        if counter > 20:
             return
         time.sleep(5)
 
@@ -29,5 +29,5 @@ try:
     my_create_data()
 except Exception as exception:
     traceback.print_exc()
-    azLib.logger.error('Got error'+exception)
+    azLib.logger.error('Got error'+str(exception))
     # logger.logTraceStackToLogFile()
