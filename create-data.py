@@ -1,7 +1,7 @@
 import time
 import traceback
 import az_lib.az_lib as az_lib
-azLib = az_lib.AzLib('script_create-data')
+azLib = az_lib.AzLib('create-data')
 
 
 def my_create_data():
