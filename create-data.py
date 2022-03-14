@@ -15,7 +15,7 @@ def my_create_data():
         azLib.logger.info("Publishing test value: " +
                           str(counter))
         my_test_file.flush()
-        azLib.publish_sensor_value("My test value", str(counter))
+        azLib.publish_sensor_value1("My test value", str(counter))
         counter += 1
         if counter > 20:
             return
