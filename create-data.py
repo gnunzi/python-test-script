@@ -16,8 +16,8 @@ def my_create_data():
                           str(counter))
         my_test_file.flush()
         azLib.publish_sensor_value1("My test value", str(counter))
-        azLib.publish_sensor_value2(1, str(counter))
-        counter += 1
+        #azLib.publish_sensor_value2(1, str(counter))
+        counter += 2
         if counter > 20:
             return
         time.sleep(5)
