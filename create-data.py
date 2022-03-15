@@ -10,18 +10,17 @@ def my_create_data():
     my_test_file = open(filename, "w")
     azLib.logger.info('Starting main loop...')
     while True:
-     #       logger.info("Printing data with cycle "+str(counter)+" to file "+filename)
+        #logger.info("Printing data with cycle "+str(counter)+" to file "+filename)
         #print("Printing data with cycle "+str(counter)+" to file "+filename)
         azLib.logger.info("Publishing test value: " +
                           str(counter))
         my_test_file.flush()
-        azLib.publish_sensor_value1("My test value", str(counter))
-        #azLib.publish_sensor_value2(1, str(counter))
+        #azLib.publish_sensor_value1("My test value", str(counter))
+        azLib.publish_sensor_value2(3, str(counter))
         counter += 2
         if counter > 50:
             return
         time.sleep(5)
-
 
 try:
     print("This is a test script. We will create a counter and increment it every 5 seconds.")
